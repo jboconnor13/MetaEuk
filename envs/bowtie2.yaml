@@ -1,0 +1,9 @@
+name: bowtie2
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bowtie2=2.4.5   # Or the latest version
+  - samtools=1.15.1  # Optional, if you need samtools as well
+  - python=3.9       # Specify the Python version you need

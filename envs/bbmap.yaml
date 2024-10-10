@@ -1,0 +1,15 @@
+name: bbmap
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bbmap               # Installs the BBMap suite
+  - samtools            # To handle BAM/SAM file processing
+  - openjdk             # Java is required to run BBMap
+  - python>=3.8         # Specifying Python version for compatibility
+  - pandas              # For working with data (if needed)
+  - numpy               # Required for some genomic processing
+  - pip                 # Install pip to manage Python packages
+  - pip:
+      - matplotlib      # To create any plots or graphs if required

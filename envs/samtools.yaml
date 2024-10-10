@@ -1,0 +1,8 @@
+name: samtools
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - samtools=1.15.1  # Or the latest version
+  - python=3.9       # Ensure Python is installed if needed
