@@ -1,3 +1,8 @@
 # config.yaml
-input_dir: "input"
-output_dir: "output"
+#Below the input and output directories are specified
+input_dir: /scratch/alpine/joconnor@xsede.org/MetaEuk_Remote/input
+output_dir: /scratch/alpine/joconnor@xsede.org/MetaEuk_Remote/output
+#We include a metadata file for sample identification
+METADATA: /scratch/alpine/joconnor@xsede.org/MetaEuk_Remote/metadata/metadata.xlsx
+#We indicate where the databases are stored 
+database_dir: /scratch/alpine/joconnor@xsede.org/MetaEuk_Remote/ref_databases/

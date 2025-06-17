@@ -2,6 +2,8 @@ import os
 import re
 from snakemake.io import expand
 
+#Change
+
 # The config file is loaded that specifies the input and output directory
 configfile: "config/config.yaml"
 
@@ -20,6 +22,16 @@ input_subjects = {
     re.match(r"([A-Za-z0-9]+)_.*_R[12]_.*", f).group(1)
     for f in input_files if re.match(r"([A-Za-z0-9]+)_.*_R[12]_.*", f)
 }
+
+#METADATA = pd.read_csv(config["METADATA"].strip())
+#SAMPLES = METADATA["Sample"].tolist()
+#RAW_FWD_READS = METADATA[config["fwd_reads_path"]]
+#RAW_REV_READS = METADATA[config["rev_reads_path"]]
+
+#print("Input samples:", input_files)
+
+
+
 
 # Debug: The input files and input subjects are printed for verification
 print("Input files:", input_files)
@@ -106,6 +118,22 @@ rule repair:
     input:
         r1_read_truncated=os.path.join(config["output_dir"], "truncated/{subject}_trimmed_truncated.R1.fastq"),
         r2_read_truncated=os.path.join(config["output_dir"], "truncated/{subject}_trimmed_truncated.R2.fastq")
+    output:
+        r1_repaired=os.path.join(config["output_dir"], "repaired/{subject}_repaired.R1.fastq"),
+        r2_repaired=os.path.join(config["output_dir"], "repaired/{subject}_repaired.R2.fastq"),
+        singleton=os.path.join(config["output_dir"], "singletons/{subject}_singletons.fastq"),
+    conda:
+        "envs/bbmap.yaml"  # A conda environment containing Bowtie2
+    shell:
+        """
+        repair.sh in={input.r1_read_truncated} in2={input.r2_read_truncated} out={output.r1_repaired} out2={output.r2_repaired} outs={output.singleton}
+        """
+
+#Now we perform MultiQC on the reports 
+rule repair:
+    input:
+        r1_read_truncated=os.path.join(config["output_dir"], "truncated/{subject}_repaired.R1.fastq"),
+        r2_read_truncated=os.path.join(config["output_dir"], "truncated/{subject}_repaired.R2.fastq")
     output:
         r1_repaired=os.path.join(config["output_dir"], "repaired/{subject}_repaired.R1.fastq"),
         r2_repaired=os.path.join(config["output_dir"], "repaired/{subject}_repaired.R2.fastq"),
