@@ -6,3 +6,4 @@ output_dir: /Users/johnoconnor/MetaEuk_Remote/output
 METADATA: /Users/johnoconnor/MetaEuk_Remote/metadata/metadata.xlsx
 #We indicate where the databases are stored 
 database_dir: /Users/johnoconnor/MetaEuk_Remote/ref_databases
+hostile_dir: /Users/johnoconnor/MetaEuk_Remote/ref_databases/hostile

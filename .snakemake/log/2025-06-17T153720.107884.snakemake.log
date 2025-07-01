@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Creating conda environment envs/fastqc.yaml...
+Downloading and installing remote packages.
+Environment for /Users/johnoconnor/MetaEuk/envs/fastqc.yaml created (location: .snakemake/conda/cad4ddbe011b494c5e87b0bc1c9616f6_)
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+all           1
+fastQC        1
+total         2
+
+Select jobs to execute...
+
+[Tue Jun 17 15:38:19 2025]
+rule fastQC:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089
+    jobid: 6
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089
+    wildcards: subject=ZIM089
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+Activating conda environment: .snakemake/conda/cad4ddbe011b494c5e87b0bc1c9616f6_
+[Tue Jun 17 15:38:20 2025]
+Error in rule fastQC:
+    jobid: 6
+    input: /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089
+    conda-env: /Users/johnoconnor/MetaEuk/.snakemake/conda/cad4ddbe011b494c5e87b0bc1c9616f6_
+    shell:
+        
+        fastqc /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq -o /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089 
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-06-17T153720.107884.snakemake.log

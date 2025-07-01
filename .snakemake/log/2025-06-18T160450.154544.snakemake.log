@@ -1,0 +1,30 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+all            1
+multiQC        1
+total          2
+
+Select jobs to execute...
+
+[Wed Jun 18 16:04:51 2025]
+rule multiQC:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/FastQC_reports
+    output: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    jobid: 7
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+RuleException in rule multiQC in file /Users/johnoconnor/MetaEuk/Snakefile, line 157:
+AttributeError: 'OutputFiles' object has no attribute 'multqc_report_name', when formatting the following:
+
+        multiqc {params.fastqc_search_dir} \ 
+                --outdir {input.fastqc_output_dir} \ 
+                --filename {output.multqc_report_name} \ 
+                --dirs-depth 2
+        

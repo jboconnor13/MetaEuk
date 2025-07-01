@@ -1,0 +1,100 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+repair                1
+trim                  1
+truncate_reads        1
+unzip                 2
+total                 6
+
+Select jobs to execute...
+
+[Wed Jun 18 12:22:07 2025]
+rule unzip:
+    input: /Users/johnoconnor/MetaEuk_Remote/input/ZIM089_S91_L001_R2_001.fastq.gz
+    output: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    jobid: 2
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    wildcards: subject=ZIM089, read=2
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Wed Jun 18 12:22:08 2025]
+Finished job 2.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Wed Jun 18 12:22:08 2025]
+rule unzip:
+    input: /Users/johnoconnor/MetaEuk_Remote/input/ZIM089_S91_L001_R1_001.fastq.gz
+    output: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq
+    jobid: 1
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq
+    wildcards: subject=ZIM089, read=1
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Wed Jun 18 12:22:08 2025]
+Finished job 1.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Wed Jun 18 12:22:08 2025]
+rule trim:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt
+    jobid: 3
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq; Input files updated by another job: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    wildcards: subject=ZIM089
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+Activating conda environment: .snakemake/conda/de58dcacbb3fb5a0ecb0ef10b1c59e83_
+[Wed Jun 18 12:22:40 2025]
+Finished job 3.
+3 of 6 steps (50%) done
+Select jobs to execute...
+
+[Wed Jun 18 12:22:40 2025]
+rule truncate_reads:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq
+    jobid: 4
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq; Input files updated by another job: /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq
+    wildcards: subject=ZIM089
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+Activating conda environment: .snakemake/conda/64fc8eea40862631e2e97ac2c2a3e7ef_
+[Wed Jun 18 12:22:43 2025]
+Finished job 4.
+4 of 6 steps (67%) done
+Select jobs to execute...
+
+[Wed Jun 18 12:22:43 2025]
+rule repair:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq
+    jobid: 5
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq; Input files updated by another job: /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq
+    wildcards: subject=ZIM089
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+Activating conda environment: .snakemake/conda/c621c7987c91e09730e762ddce008118_
+[Wed Jun 18 12:22:45 2025]
+Finished job 5.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Wed Jun 18 12:22:45 2025]
+localrule all:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq, /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq
+    jobid: 0
+    reason: Input files updated by another job: /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Wed Jun 18 12:22:45 2025]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2025-06-18T122204.913498.snakemake.log

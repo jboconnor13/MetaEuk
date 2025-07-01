@@ -1,0 +1,3 @@
+WildcardError in file /Users/johnoconnor/MetaEuk/Snakefile, line 61:
+No values given for wildcard 'subject'.
+  File "/Users/johnoconnor/MetaEuk/Snakefile", line 61, in <module>

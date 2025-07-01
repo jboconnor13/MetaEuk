@@ -1,0 +1,7 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in rule multiQC in file /Users/johnoconnor/MetaEuk/Snakefile, line 156:
+Missing input files for rule multiQC:
+    output: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    affected files:
+        /Users/johnoconnor/MetaEuk_Remote/output/FastQC_reports

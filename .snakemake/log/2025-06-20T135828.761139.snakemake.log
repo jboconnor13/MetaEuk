@@ -1,0 +1,11 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+The flag 'directory' used in rule hostile is only valid for outputs, not inputs.
+The flag 'directory' used in rule hostile is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in rule hostile in file /Users/johnoconnor/MetaEuk/Snakefile, line 174:
+Missing input files for rule hostile:
+    output: /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.R1.fq.gz, /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.R2.fq.gz, /Users/johnoconnor/MetaEuk_Remote/output/hostile_dir/ZIM089.hostile_report.html
+    wildcards: subject=ZIM089
+    affected files:
+        /Users/johnoconnor/MetaEuk_Remote/ref_databases
+        /Users/johnoconnor/MetaEuk_Remote/output/nonhost

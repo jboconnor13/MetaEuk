@@ -1,0 +1,39 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+all            1
+multiQC        1
+total          2
+
+Select jobs to execute...
+
+[Thu Jun 19 11:58:12 2025]
+rule multiQC:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/FastQC_reports
+    output: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    jobid: 7
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+Activating conda environment: .snakemake/conda/cad4ddbe011b494c5e87b0bc1c9616f6_
+[Thu Jun 19 11:58:18 2025]
+Finished job 7.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu Jun 19 11:58:18 2025]
+localrule all:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/truncated/ZIM089_trimmed_truncated.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq, /Users/johnoconnor/MetaEuk_Remote/output/singletons/ZIM089_singletons.fastq, /Users/johnoconnor/MetaEuk_Remote/output/FastQC_reports/ZIM089, /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    jobid: 0
+    reason: Input files updated by another job: /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/multiqc_report.html
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Thu Jun 19 11:58:18 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-06-19T115810.715887.snakemake.log

@@ -1,0 +1,5 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+Building DAG of jobs...
+WildcardError in rule fastQC in file /Users/johnoconnor/MetaEuk/Snakefile, line 136:
+Wildcards in input files cannot be determined from output files:
+'subject'

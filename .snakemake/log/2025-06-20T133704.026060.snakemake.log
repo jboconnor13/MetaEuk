@@ -1,0 +1,6 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+The flag 'directory' used in rule hostile is only valid for outputs, not inputs.
+The flag 'directory' used in rule hostile is only valid for outputs, not inputs.
+SyntaxError:
+Not all output, log and benchmark files of rule hostile contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
+  File "/Users/johnoconnor/MetaEuk/Snakefile", line 173, in <module>

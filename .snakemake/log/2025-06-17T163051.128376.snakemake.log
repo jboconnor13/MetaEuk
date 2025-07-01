@@ -1,0 +1,3 @@
+NameError in file /Users/johnoconnor/MetaEuk/Snakefile, line 60:
+name 'pj' is not defined
+  File "/Users/johnoconnor/MetaEuk/Snakefile", line 60, in <module>

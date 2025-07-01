@@ -1,0 +1,9 @@
+Building DAG of jobs...
+InputFunctionException in rule unzip in file /Users/johnoconnor/MetaEuk/Snakefile, line 66:
+Error:
+  KeyError: 'ZIM089/ZIM089_repaired.R1_fastqc.html'
+Wildcards:
+  subject=ZIM089/ZIM089_repaired.R1_fastqc.html
+  read=1
+Traceback:
+  File "/Users/johnoconnor/MetaEuk/Snakefile", line 68, in <lambda>

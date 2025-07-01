@@ -1,0 +1,43 @@
+The flag 'directory' used in rule multiQC is only valid for outputs, not inputs.
+The flag 'directory' used in rule hostile is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+all            1
+hostile        1
+multiQC        1
+total          3
+
+Select jobs to execute...
+
+[Fri Jun 20 14:33:17 2025]
+rule hostile:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/ref_databases
+    output: /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.R1.fq.gz, /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.R2.fq.gz, /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.hostile_report.html
+    jobid: 8
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.hostile_report.html
+    wildcards: subject=ZIM089
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+Activating conda environment: .snakemake/conda/1370aea1fc2311860281e28af47228cb_
+[Fri Jun 20 14:33:20 2025]
+Error in rule hostile:
+    jobid: 8
+    input: /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq, /Users/johnoconnor/MetaEuk_Remote/ref_databases
+    output: /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.R1.fq.gz, /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.R2.fq.gz, /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.hostile_report.html
+    conda-env: /Users/johnoconnor/MetaEuk/.snakemake/conda/1370aea1fc2311860281e28af47228cb_
+    shell:
+        
+        hostile clean             --fastq1 /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R1.fastq --fastq2 /Users/johnoconnor/MetaEuk_Remote/output/repaired/ZIM089_repaired.R2.fastq             -o /Users/johnoconnor/MetaEuk_Remote/output/nonhost             --threads 1             --index /Users/johnoconnor/MetaEuk_Remote/ref_databases             --debug             --aligner bowtie2             > /Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.hostile_report.html
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job hostile since they might be corrupted:
+/Users/johnoconnor/MetaEuk_Remote/output/nonhost/ZIM089.hostile_report.html
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-06-20T143315.362889.snakemake.log

@@ -1,0 +1,70 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job               count
+--------------  -------
+all                   1
+repair                1
+trim                  1
+truncate_reads        1
+unzip                 2
+total                 6
+
+Select jobs to execute...
+
+[Tue Jun 17 14:20:04 2025]
+rule unzip:
+    input: /Users/johnoconnor/MetaEuk_Remote/input/ZIM089_S91_L001_R2_001.fastq.gz
+    output: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    jobid: 2
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    wildcards: subject=ZIM089, read=2
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Tue Jun 17 14:20:05 2025]
+Finished job 2.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Tue Jun 17 14:20:05 2025]
+rule unzip:
+    input: /Users/johnoconnor/MetaEuk_Remote/input/ZIM089_S91_L001_R1_001.fastq.gz
+    output: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq
+    jobid: 1
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq
+    wildcards: subject=ZIM089, read=1
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Tue Jun 17 14:20:05 2025]
+Finished job 1.
+2 of 6 steps (33%) done
+Select jobs to execute...
+
+[Tue Jun 17 14:20:05 2025]
+rule trim:
+    input: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt
+    jobid: 3
+    reason: Missing output files: /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq; Input files updated by another job: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq
+    wildcards: subject=ZIM089
+    resources: tmpdir=/var/folders/df/m5cp_wp54tb2x8wpp1lp1vv00000gp/T
+
+[Tue Jun 17 14:20:05 2025]
+Error in rule trim:
+    jobid: 3
+    input: /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq, /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq
+    output: /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq, /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt, /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt
+    conda-env: /Users/johnoconnor/MetaEuk/.snakemake/conda/de58dcacbb3fb5a0ecb0ef10b1c59e83_
+    shell:
+        
+        trimmomatic PE /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R1.fastq /Users/johnoconnor/MetaEuk_Remote/output/unzipped/ZIM089_R2.fastq         /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R1_trimmed.fastq         /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq /Users/johnoconnor/MetaEuk_Remote/output/trimmed/ZIM089_R2_trimmed.fastq         -trimlog /Users/johnoconnor/MetaEuk_Remote/output/trimlog/ZIM089_trimmomatic_log.txt         -summary /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt         ILLUMINACLIP:src/Trimmomatic-0.39/adapters/adapters_all.fa:2:30:10 LEADING:20 TRAILING:20 MINLEN:50 SLIDINGWINDOW:4:20         -phred33
+        > /Users/johnoconnor/MetaEuk_Remote/output/summary/ZIM089_trimmomatic_summary.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-06-17T142004.795015.snakemake.log

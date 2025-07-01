@@ -1,0 +1,9 @@
+Building DAG of jobs...
+MissingInputException in rule all in file /Users/johnoconnor/MetaEuk/Snakefile, line 47:
+Missing input files for rule all:
+    affected files:
+        /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089_repaired.R2.fastq.zip
+        /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089_repaired.R2.fastq.html
+        /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089_repaired.R1.fastq.zip
+        /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089
+        /Users/johnoconnor/MetaEuk_Remote/output/FASTQC_reports/ZIM089_repaired.R1.fastq.html
